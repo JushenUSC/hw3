@@ -83,6 +83,8 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
+
+	//base case
 	if (head == nullptr) {
 		return nullptr;
 	}
@@ -90,29 +92,11 @@ Node* llfilter(Node* head, Comp pred)
 		Node* temp = head;
 		head = head->next;
 		delete temp;
-		llfilter(head, pred);
+		return llfilter(head, pred);
 	}
 	else {
-		if (head->next && pred(head->next->val) == true) { //it is odd, so filter it out
-			if (head->next->next) {
-				Node* returnedNode = llfilter(head->next->next, pred);
-				//deallocate head->next
-				delete head->next;
-				head->next = returnedNode;
-			}
-			else {
-				//this means that the next node is the last node
-				if (pred(head->next->val) == true) { // if its odd delete
-					delete head->next;
-				}
-				else { //if its not odd, this call ends
-					return head;
-				}
-			}
-		}
-		else {
-			llfilter(head->next, pred);
-		}
+		head->next = llfilter(head->next, pred);
+		return head;
 	}
 }
 
