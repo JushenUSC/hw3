@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/work/hws/hw3/llrec.cpp
+llrec.h
+/work/hws/hw3/llrec.h
+
+/work/hws/hw3/llrec.h
+

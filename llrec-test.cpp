@@ -66,9 +66,17 @@ void dealloc(Node* head)
 //   Add any helper functions or
 //   function object struct declarations
 // -----------------------------------------------
-
-
-
+class parityTester {
+	public:
+		bool operator() (int inputValue) {
+			if (inputValue % 2 != 0) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+};
 
 
 int main(int argc, char* argv[])
@@ -87,7 +95,17 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+	/*
+	Node* smaller;
+	Node* larger;
+	llpivot(head, smaller, larger, 10);
+	print(smaller);
+	print(larger);
+	*/
 
+	parityTester pTestInstance;
+	llfilter(head, pTestInstance);
+	print(head);
 
     
     return 0;
