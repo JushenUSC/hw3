@@ -95,17 +95,21 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
-	/*
+	
 	Node* smaller;
 	Node* larger;
-	llpivot(head, smaller, larger, 10);
+	llpivot(head, smaller, larger, 5);
+	cout << "Smaller list: ";
 	print(smaller);
+	cout << "Larger list: ";
 	print(larger);
-	*/
+	cout << "Original list again: ";
+	print(head);
 
+	/*
 	parityTester pTestInstance;
 	llfilter(head, pTestInstance);
-	print(head);
+	print(head);*/
 
     
     return 0;
